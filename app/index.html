@@ -1,0 +1,35 @@
+---
+layout: default
+title: Stewart Yu
+---
+
+<section class="home sites">
+    <div class="c-hero">
+        <div class="c-hero__about">
+            <h1>Hi, I'm Stewart!</h1>
+            <div class="c-hero__about--desktop">
+                <p>As a front-end engineer, I've created mobile experiences for international brands like Garmin, Ideeli, and Beyond The Rack. Also, I teach people how to build mobile sites.</p>
+                <p>When I'm not working on the web, you'll find me writing music, performing, and producing YouTube videos.</p>
+            </div>
+            <div class="c-hero__about--mobile">
+                <p>I'm a front-end engineer specializing in mobile.</p>
+                <p>I'm also a musician.</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    {% for site in site.categories.site %}
+        <article class="c-site">
+            {{ site.content }}
+        </article>
+    {% endfor %}
+
+    <div class="c-contact">
+        <h2>Get in Touch!</h2>
+        <a href="http://ca.linkedin.com/in/stewartyu/">LinkedIn</a>
+        <a href="https://www.twitter.com/stewartyu">Twitter</a>
+        <a href="https://github.com/stewartyu">GitHub</a>
+    </div>
+</section>

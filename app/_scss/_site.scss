@@ -1,0 +1,31 @@
+.c-site {
+	padding: 0 10px;
+	border-top: 1px solid #ccc;
+
+	h2 {
+		text-align: center;
+	}
+}
+
+.c-compatibility {
+	display: block;
+	margin-bottom: 30px;
+
+	text-align: center;
+	font-style: italic;
+}
+
+.c-video {
+    position: relative;
+    padding-bottom: 53%;
+    margin: 0 -10px;
+    height: 0;
+}
+
+.c-video__embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

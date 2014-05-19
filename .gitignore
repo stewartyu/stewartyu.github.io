@@ -1,0 +1,4 @@
+.jekyll
+.sass-cache
+.tmp
+node_modules
