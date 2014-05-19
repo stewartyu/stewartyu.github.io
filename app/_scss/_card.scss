@@ -1,0 +1,79 @@
+@mixin card($color) {
+	background-color: $color;
+
+	border-top: 5px solid darken($color, 10%);
+}
+
+.c-card {
+	padding: 0 10px;
+	border-top: 1px solid #ccc;
+
+	h2 {
+		text-align: center;
+		font-size: 2.5rem;
+	}
+
+	a {
+		color: $white;
+	}
+}
+
+.c-card--red {
+	$color: #f15774;
+
+	@include card($color);
+
+	color: $white;
+
+	h2 {
+		text-shadow: $black 0 1px 0;
+	}
+}
+
+.c-card--purple {
+	$color: #9040d5;
+
+	@include card($color);
+
+	color: $white;
+
+	h2 {
+		text-shadow: $black 0 1px 0;
+	}
+}
+
+.c-card--green {
+	$color: #37de6a;
+
+	@include card($color);
+
+	a {
+		color: $black;
+	}
+}
+
+.c-card--blue {
+	$color: #4671d5;
+
+	@include card($color);
+
+	color: $white;
+
+	h2 {
+		text-shadow: $black 0 1px 0;
+	}
+}
+
+.c-card__compatibility {
+	display: block;
+	margin-bottom: 30px;
+
+	text-align: center;
+	font-style: italic;
+}
+
+.c-card__description {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+}

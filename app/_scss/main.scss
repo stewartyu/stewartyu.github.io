@@ -1,3 +1,6 @@
+$white: #fff;
+$black: #333;
+
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 /*
@@ -15,7 +18,7 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: $black;
 }
 
 html {
@@ -89,7 +92,7 @@ textarea {
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
-    color: #000;
+    color: $black;
     padding: 0.2em 0;
 }
 
@@ -109,9 +112,8 @@ img {
     max-width: 100%;
 }
 
-.t-container {
-    max-width: 960px;
-    margin: 0 auto;
+body {
+    margin: 0;
 }
 
 @media (max-width: 900px) {
@@ -125,16 +127,22 @@ img {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
 h1 {
     font-size: 3rem;
 }
 
-@import "_site";
-@import "_hero";
+.t-inner {
+    max-width: 960px;
+    margin: 0 auto;
+}
 
+@import "_card";
+@import "_media";
+@import "_hero";
+@import "_contact";
 
 
 
@@ -238,7 +246,7 @@ h1 {
 @media print {
     * {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        color: $black !important; /* Black prints faster: h5bp.com/s */
         box-shadow: none !important;
         text-shadow: none !important;
     }

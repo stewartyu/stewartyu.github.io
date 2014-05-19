@@ -1,0 +1,27 @@
+.c-media {
+    position: relative;
+    padding-bottom: 53%;
+    margin: 0 -10px;
+    height: 0;
+    max-width: 960px;
+}
+
+.c-media--image {
+    max-width: none;
+    overflow: hidden;
+}
+
+@media (max-width: 960px) {
+    .c-media--image img {
+        max-width: 150%;
+        margin-left: -35%;
+    }
+}
+
+.c-media__embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

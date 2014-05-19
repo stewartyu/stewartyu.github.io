@@ -2,3 +2,4 @@
 .sass-cache
 .tmp
 node_modules
+_bower_components

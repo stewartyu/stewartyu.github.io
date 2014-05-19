@@ -2,21 +2,27 @@
 layout: site
 title:  "Mobile Development Educator"
 category: site
+color: red
 ---
 
 ## Mobile Development Educator
 
-<div class="c-video">
-	<iframe src="//player.vimeo.com/video/94033378" width="950" height="529" frameborder="0" class="c-video__embed" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div class="t-inner">
+	<div class="c-media">
+		<iframe src="//player.vimeo.com/video/94033378" width="950" height="529" frameborder="0" class="c-media__embed" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
 </div>
 
-To kickstart mobile and tablet development, I train Mobify's in-house developers,
-external delivery partners, and customers on Mobify's technologies.
-As a Mobify ambassador, I instill mobile development/performance best practices
-in developers.
+<div class="c-card__description">
+	<p>To kickstart mobile and tablet development, I train Mobify's in-house developers, external delivery partners, and customers on Mobify's technologies.
+	As a Mobify ambassador, I instill mobile development/performance best practices
+	in developers.</p>
 
-Responsibilities:
+	<p>Responsibilities:</p>
 
-* In-person and teleconference training
-* Technical documentation
-* Video production
+	<ul>
+		<li>In-person and teleconference training</li>
+		<li>Technical documentation</li>
+		<li>Video production</li>
+	</ul>
+</div>

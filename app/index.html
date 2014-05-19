@@ -21,7 +21,7 @@ title: Stewart Yu
 
 
     {% for site in site.categories.site %}
-        <article class="c-site">
+        <article class="c-card c-card--{{ site.color }}">
             {{ site.content }}
         </article>
     {% endfor %}
