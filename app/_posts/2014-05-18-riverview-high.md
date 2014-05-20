@@ -7,9 +7,10 @@ color: purple
 
 ## Riverview High
 
-<div class="c-card__compatibility">
-    responsive
-</div>
+<ul class="c-card__stats">
+    <li>URL: <a href="http://www.riverviewhighthemusical.com">riverviewhighthemusical.com</a></li>
+    <li>responsive</li>
+</ul>
 
 <div class="c-media c-media--image">
     <img src="{{ site.url }}/img/sites/riverviewhigh.jpg" />

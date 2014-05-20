@@ -7,9 +7,10 @@ color: blue
 
 ## Beyond The Rack
 
-<div class="c-card__compatibility">
-    smartphone/tablet
-</div>
+<ul class="c-card__stats">
+    <li>URL: <a href="http://www.beyondtherack.com">beyondtherack.com</a></li>
+    <li>smartphone/tablet</li>
+</ul>
 
 <div class="t-inner">
     <div class="c-media">
@@ -19,7 +20,7 @@ color: blue
 
 <div class="c-card__description">
     <p>URL: <a href="http://www.beyondtherack.com">beyondtherack.com</a></p>
-    
+
     <p>Results:</p>
 
     <ul>

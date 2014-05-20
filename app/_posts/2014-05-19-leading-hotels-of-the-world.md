@@ -7,9 +7,10 @@ color: blue
 
 ## Leading Hotels Of The World
 
-<div class="c-card__compatibility">
-    smartphone
-</div>
+<ul class="c-card__stats">
+    <li>URL: <a href="http://www.lhw.com">lhw.com</a></li>
+    <li>smartphone</li>
+</ul>
 
 <div class="t-inner">
     <div class="c-media">
