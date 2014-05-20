@@ -8,7 +8,7 @@ color: blue
 ## Leading Hotels Of The World
 
 <ul class="c-card__stats">
-    <li>URL: <a href="http://www.lhw.com">lhw.com</a></li>
+    <li><a href="http://www.lhw.com">lhw.com</a></li>
     <li>smartphone</li>
 </ul>
 

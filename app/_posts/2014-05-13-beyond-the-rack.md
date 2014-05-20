@@ -8,7 +8,7 @@ color: blue
 ## Beyond The Rack
 
 <ul class="c-card__stats">
-    <li>URL: <a href="http://www.beyondtherack.com">beyondtherack.com</a></li>
+    <li><a href="http://www.beyondtherack.com">beyondtherack.com</a></li>
     <li>smartphone/tablet</li>
 </ul>
 

@@ -8,7 +8,7 @@ color: purple
 ## Riverview High
 
 <ul class="c-card__stats">
-    <li>URL: <a href="http://www.riverviewhighthemusical.com">riverviewhighthemusical.com</a></li>
+    <li><a href="http://www.riverviewhighthemusical.com">riverviewhighthemusical.com</a></li>
     <li>responsive</li>
 </ul>
 

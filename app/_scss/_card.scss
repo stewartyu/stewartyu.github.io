@@ -6,7 +6,6 @@
 
 .c-card {
 	padding: 0 10px;
-	border-top: 1px solid #ccc;
 
 	h2 {
 		text-align: center;
@@ -18,17 +17,53 @@
 	}
 }
 
-.c-card__compatibility {
-	display: block;
-	margin-bottom: 30px;
+.c-card__stats {
+	list-style-type: none;
 
 	text-align: center;
-	font-style: italic;
+
+	margin-bottom: 30px;
+
+	li {
+		position: relative;
+
+		display: inline-block;
+
+		&:nth-of-type(n+2) {
+			margin-left: 20px;
+		}
+
+		&::after {
+			content: '';
+
+			display: block;
+
+			height: 5px;
+			width: 5px;
+			border-radius: 5px;
+			background-color: $black;
+
+			position: absolute;
+			right: -15px;
+			top: 40%;
+		}
+
+		&:last-of-type::after {
+			height: 0;
+			width: 0;
+		}
+	}
+}
+
+@media (max-width: 380px) {
+	.c-card__stats {
+		font-size: 0.9em;
+	}
 }
 
 .c-card__description {
 	display: none;
-	
+
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 20px;
