@@ -1,51 +1,41 @@
 .c-hero {
-	background-image: url(../img/stewart.jpg);
-	background-size: 100% auto;
+    background-image: url(../img/stewart.jpg);
+    background-size: 100% auto;
 
-	padding: 5% 5% 10% 30%;
+    padding: 5% 5% 10% 30%;
 }
 
 .c-hero__about {
-	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
 
-	padding: 10px 20px;
+    padding: 10px 20px;
 
-	h1 {
-		-webkit-margin-before: 0;
-		-webkit-margin-after: 0;
-	}
+    h1 {
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+    }
 }
 
 .c-hero__about--mobile {
-	display: none;
+    display: none;
 }
 
 @media (max-width: 720px) {
-	.c-hero__about {
+    .c-hero__about {
 
-		h1 {
-			font-size: 2rem;
-		}
-	}
+        h1 {
+            font-size: 2rem;
+        }
+    }
 }
 
 @media (max-width: 600px) {
-	.c-hero__about {
-		padding: 5px 10px;
+    .c-hero__about {
+        padding: 5px 10px;
 
-		h1 {
-			font-size: 1.7rem;
-		}
-	}
-
-	.c-hero__about--desktop {
-		display: none;
-	}
-
-	.c-hero__about--mobile {
-		display: block;
-
-		font-size: 0.9em;
-	}
+        h1 {
+            font-size: 1.7rem;
+        }
+    }
 }

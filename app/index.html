@@ -7,29 +7,49 @@ title: Stewart Yu
     <div class="c-hero">
         <div class="c-hero__about">
             <h1>Hi, I'm Stewart!</h1>
-            <div class="c-hero__about--desktop">
-                <p>As a front-end engineer, I've created mobile experiences for international brands like Garmin, Ideeli, and Beyond The Rack. Also, I teach people how to build mobile sites.</p>
-                <p>When I'm not working on the web, you'll find me writing music, performing, and producing YouTube videos.</p>
-            </div>
-            <div class="c-hero__about--mobile">
-                <p>I'm a front-end engineer specializing in mobile.</p>
-                <p>I'm also a musician.</p>
-            </div>
-
+            <p>I make websites and teach developers to build for mobile.</p>
+            <p>Looking for my music?</p>
         </div>
     </div>
 
+    <div class="c-section">
+        <h2>What I Do</h2>
 
-    {% for site in site.categories.site %}
-        <article class="c-card c-card--{{ site.color }}">
-            {{ site.content }}
-        </article>
-    {% endfor %}
+        <div class="row">
+            <div class="col">
+                <h3>Mobile First</h3>
+                <p>Thinking about mobile first helps me to build focused, future-friendly sites. I've built smartphone, tablet, and responsive experiences.</p>
+
+                <h3>Modularity</h3>
+                <p>I love code re-use in both my JS and CSS work. In fact, I helped build an off-canvas flyout menu system, Pikabu.</p>
+            </div>
+            <div class="col">
+                <h3>Sharing Knowledge</h3>
+                <p>Helping people improve their skills and reaching those "Aha!" moments is a passion of mine. Creating code style/best practice guides, and keeping technical documentation can take dev teams to the next level.</p>
+
+                <div class="c-media">
+                    <iframe src="//player.vimeo.com/video/94033378" width="950" height="529" frameborder="0" class="c-media__embed" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-section">
+        <h2>Work I've Done</h2>
+        {% for site in site.categories.site %}
+            <article class="c-card">
+                {{ site.content }}
+            </article>
+        {% endfor %}
+    </div>
 
     <div class="c-contact">
         <h2>Get in Touch!</h2>
+        <a href="mailto:stewart@stewartyu.com">stewart@stewartyu.com</a>
         <a href="http://ca.linkedin.com/in/stewartyu/">LinkedIn</a>
         <a href="https://www.twitter.com/stewartyu">Twitter</a>
         <a href="https://github.com/stewartyu">GitHub</a>
+
+        <copyright>© 2014 Stewart Yu.</copyright>
     </div>
 </section>
