@@ -17,24 +17,8 @@
     }
 }
 
-.c-hero__about--mobile {
-    display: none;
-}
-
-@media (max-width: 720px) {
-    .c-hero__about {
-        h1 {
-            font-size: 2rem;
-        }
-    }
-}
-
 @media (max-width: 600px) {
-    .c-hero__about {
-        padding: 5px 10px;
-
-        h1 {
-            font-size: 1.7rem;
-        }
+    .c-hero__profile {
+        max-width: 100px;
     }
 }

@@ -46,9 +46,14 @@
         text-align: center;
     }
 
-    .t-header__title,
+    .t-header__title {
+        display: none;
+    }
+
     .t-header__navigation {
-        float: none;
+        display: none;
+
+        margin-top: $margin*3;
     }
 
 }
