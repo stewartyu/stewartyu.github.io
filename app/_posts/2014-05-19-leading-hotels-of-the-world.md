@@ -5,7 +5,7 @@ category: site
 color: blue
 ---
 
-## Leading Hotels Of The World
+### Leading Hotels Of The World
 
 <ul class="c-card__stats">
     <li><a href="http://www.lhw.com">lhw.com</a></li>

@@ -3,15 +3,14 @@
     padding-bottom: 53%;
     height: 0;
     max-width: 960px;
+
+    margin: 0 auto;
 }
 
 .c-media--image {
-    max-width: none;
     overflow: hidden;
-}
 
-@media (max-width: 960px) {
-    .c-media--image img {
+    img {
         max-width: 150%;
         margin-left: -35%;
     }

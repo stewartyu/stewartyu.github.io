@@ -2,6 +2,14 @@ $brand: #660bab;
 $white: #f1f1f1;
 $black: #333;
 
+@import "_reset";
+@import "fontawesome/_font-awesome.scss";
+@import "_header";
+@import "_card";
+@import "_media";
+@import "_hero";
+@import "_contact"; 
+
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 /*
@@ -145,10 +153,7 @@ ul {
     margin: 0 auto;
 }
 
-@import "_card";
-@import "_media";
-@import "_hero";
-@import "_contact";
+
 
 
 

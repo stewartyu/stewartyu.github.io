@@ -5,7 +5,7 @@ category: site
 color: purple
 ---
 
-## Riverview High
+### Riverview High
 
 <ul class="c-card__stats">
     <li><a href="http://www.riverviewhighthemusical.com">riverviewhighthemusical.com</a></li>

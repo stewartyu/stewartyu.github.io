@@ -5,7 +5,7 @@ category: site
 color: blue
 ---
 
-## Beyond The Rack
+### Beyond The Rack
 
 <ul class="c-card__stats">
     <li><a href="http://www.beyondtherack.com">beyondtherack.com</a></li>
