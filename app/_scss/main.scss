@@ -2,7 +2,10 @@ $brand: #660bab;
 $white: #f1f1f1;
 $black: #333;
 
+$margin: 10px;
+
 @import "_reset";
+@import "_clearfix";
 @import "fontawesome/_font-awesome.scss";
 @import "_header";
 @import "_card";
@@ -129,10 +132,6 @@ body {
 }
 
 @media (max-width: 900px) {
-    html {
-        font-size: 15px;
-    }
-
     .t-container {
         max-width: 100%;
     }

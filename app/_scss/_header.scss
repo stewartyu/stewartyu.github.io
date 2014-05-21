@@ -1,3 +1,54 @@
 .t-header {
-	
+    @include clearfix;
+    border-top: 5px solid $brand;
+
+    padding: $margin*3;
+}
+
+.t-header__title {
+    float: left;
+
+    text-decoration: none;
+    color: $black;
+
+    font-size: 3rem;
+}
+
+.t-header__navigation {
+    float: right;
+    margin-top: $margin*2;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.t-header__link {
+    padding: $margin;
+    margin-right: $margin*2;
+
+    text-decoration: none;
+    color: $black;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+.t-header__link--selected {
+    color: $brand;
+    border: 1px solid $brand;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .t-header {
+        text-align: center;
+    }
+
+    .t-header__title,
+    .t-header__navigation {
+        float: none;
+    }
+
 }

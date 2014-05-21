@@ -5,7 +5,7 @@
 }
 
 .c-card {
-	padding: 0 10px;
+	padding: 0 $margin;
 
 	h2 {
 		text-align: center;
@@ -22,7 +22,7 @@
 
 	text-align: center;
 
-	margin-bottom: 30px;
+	margin-bottom: $margin*3;
 
 	li {
 		position: relative;
@@ -30,7 +30,7 @@
 		display: inline-block;
 
 		&:nth-of-type(n+2) {
-			margin-left: 20px;
+			margin-left: $margin*2;
 		}
 
 		&::after {
@@ -66,5 +66,5 @@
 
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 20px;
+	padding: $margin*2;
 }
