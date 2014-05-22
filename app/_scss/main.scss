@@ -7,13 +7,14 @@ $margin: 10px;
 @import "_reset";
 @import "_clearfix";
 @import "_grid";
-@import "fontawesome/_font-awesome.scss";
+@import "fontawesome/_font-awesome";
+@import "_socicon";
 @import "_header";
 @import "_hero";
 @import "_philosophy";
 @import "_card";
 @import "_media";
-@import "_contact"; 
+@import "_contact";
 
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 

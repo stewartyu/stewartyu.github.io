@@ -1,3 +1,17 @@
 .c-contact {
-	background-color: $white;
+    background-color: $white;
+
+    .socicon {
+        text-decoration: none;
+        color: $white;
+        background-color: $brand;
+        border-radius: 50%;
+
+        &:before {
+            display: block;
+
+            font-size: 3.0rem;
+            padding: $margin*2;
+        }
+    }
 }
