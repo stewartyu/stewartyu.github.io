@@ -9,9 +9,10 @@ $margin: 10px;
 @import "_grid";
 @import "fontawesome/_font-awesome.scss";
 @import "_header";
+@import "_hero";
+@import "_philosophy";
 @import "_card";
 @import "_media";
-@import "_hero";
 @import "_contact"; 
 
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
@@ -130,6 +131,7 @@ body {
     background-color: $white;
 
     font-family: 'Roboto', 'Helvetica', sans-serif;
+    line-height: 1.5rem;
 }
 
 @media (max-width: 900px) {
@@ -142,10 +144,13 @@ h1 {
     font-size: 3rem;
 }
 
-ul {
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-padding-start: 0;
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.5rem;
 }
 
 .t-inner {

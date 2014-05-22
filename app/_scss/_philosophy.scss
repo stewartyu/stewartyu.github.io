@@ -1,0 +1,29 @@
+.c-philosophy {
+    margin: $margin;
+    text-align: center;
+
+    .fa {
+        text-align: center;
+        font-size: 6.5rem;
+        color: $white;
+        background-color: $brand;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        padding: $margin*2;
+
+        &:before {
+            padding: $margin*2;
+        }
+    }
+
+    .fa-puzzle-piece:before {
+        position: relative;
+        top: -7px;
+        font-size: 0.8em;
+    }
+
+    h3 {
+        margin: $margin*2 0;
+    }
+}
