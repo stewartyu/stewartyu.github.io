@@ -11,7 +11,7 @@ $margin: 10px;
 @import "_socicon";
 @import "_header";
 @import "_hero";
-@import "_philosophy";
+@import "_what_i_do";
 @import "_card";
 @import "_media";
 @import "_contact";
@@ -146,20 +146,29 @@ h1 {
 }
 
 h2 {
+    margin: $margin*3 0;
+
     font-size: 2rem;
     text-transform: uppercase;
 }
 
 h3 {
+    margin: $margin*3 0;
+
     font-size: 1.5rem;
+    text-align: center;
 }
 
-.t-inner {
+.t-root {
     max-width: 960px;
     margin: 0 auto;
 }
 
-
+.c-section {
+    margin: $margin*3 0;
+    padding-top: $margin*3;
+    border-top: 1px solid lighten($brand, 10);
+}
 
 
 
