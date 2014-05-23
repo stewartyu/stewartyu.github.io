@@ -31,3 +31,10 @@
         margin-bottom: $margin*3;
     }
 }
+
+@media (max-width: 600px) {
+    .c-what-i-do .col {
+        float: none;
+        width: 100%;
+    }
+}
