@@ -4,16 +4,19 @@
     border-top: 5px solid darken($color, 10%);
 }
 
+.c-work-cards {
+    @include clearfix;
+}
+
 .c-card {
-    padding: 0 $margin;
+    padding: $margin*2;
+
+    float: left;
+    width: 50%;
 
     h2 {
         text-align: center;
         font-size: 2.5rem;
-    }
-
-    a {
-        color: $black;
     }
 }
 
@@ -41,7 +44,7 @@
             height: 5px;
             width: 5px;
             border-radius: 5px;
-            background-color: $black;
+            background-color: $brand;
 
             position: absolute;
             right: -15px;

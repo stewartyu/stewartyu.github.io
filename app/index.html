@@ -62,13 +62,16 @@ title: Stewart Yu
         </ul>
     </div>
 
-    <div class="c-section">
+    <div class="c-section c-work">
         <h2>Work I've Done</h2>
-        {% for site in site.categories.site %}
-            <article class="c-card">
-                {{ site.content }}
-            </article>
-        {% endfor %}
+
+        <div class="c-work-cards">
+            {% for site in site.categories.site %}
+                <article class="c-card">
+                    {{ site.content }}
+                </article>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="c-section c-contact">

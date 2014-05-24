@@ -2,7 +2,7 @@
 }
 
 .c-philosophy {
-    margin: $margin;
+    margin: $margin*2;
     text-align: center;
 
     .fa {
@@ -17,18 +17,25 @@
 
         &:before {
             padding: $margin*2;
+
+            position: relative;
+            top: -7px;
         }
     }
 
     .fa-puzzle-piece:before {
-        position: relative;
-        top: -7px;
+        top: -13px;
+
         font-size: 0.8em;
     }
 
     p {
         text-align: left;
         margin-bottom: $margin*3;
+    }
+
+    .c-media {
+        margin-top: $margin*2;
     }
 }
 
