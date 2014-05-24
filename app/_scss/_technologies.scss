@@ -1,9 +1,11 @@
 .c-technologies {
     @include clearfix;
+    padding-bottom: $margin*2;
 
     ul {
         float: left;
         width: 50%;
         padding: 0 $margin*2;
+        margin-top: $margin*3;
     }
 }

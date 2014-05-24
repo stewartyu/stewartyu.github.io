@@ -9,7 +9,7 @@
 }
 
 .c-card {
-    padding: $margin*2;
+    padding: $margin $margin*2 $margin*2;
 
     float: left;
     width: 50%;
@@ -20,12 +20,36 @@
     }
 }
 
+@media (max-width: 600px) {
+    .c-card {
+        float: none;
+        width: 100%;
+
+        &::after {
+            content: '';
+
+            display: block;
+            width: 10%;
+            height: $margin*3;
+
+            margin: 0 auto;
+            padding-bottom: $margin*3;
+
+            border-bottom: 1px dashed $brand;
+        }
+
+        &:last-of-type::after {
+            display: none;
+        }
+    }
+}
+
 .c-card__stats {
     list-style-type: none;
 
     text-align: center;
 
-    margin-bottom: $margin*3;
+    margin: 0 $margin*-1 $margin*3;
 
     li {
         position: relative;

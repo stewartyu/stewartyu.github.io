@@ -18,6 +18,10 @@
 }
 
 @media (max-width: 600px) {
+    .c-hero {
+        margin-top: $margin;
+    }
+    
     .c-hero__profile {
         max-width: 100px;
     }
