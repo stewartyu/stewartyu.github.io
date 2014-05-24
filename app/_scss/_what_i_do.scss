@@ -40,8 +40,23 @@
 }
 
 @media (max-width: 600px) {
-    .c-what-i-do .col {
-        float: none;
-        width: 100%;
+    .c-what-i-do {
+        .col {
+            float: none;
+            width: 100%;
+        }
+
+        .fa {
+            font-size: 3.5rem;
+            padding: $margin*1.5;
+            width: 100px;
+            height: 100px;
+
+            &::before {
+                top: 0;
+
+                padding: $margin*1.5;
+            }
+        }
     }
 }
