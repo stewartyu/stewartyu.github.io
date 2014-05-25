@@ -30,6 +30,11 @@
 
     li {
         display: inline-block;
+        margin-right: $margin;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
     }
 
     .fa {
