@@ -2,7 +2,6 @@
 layout: site
 title:  "Beyond The Rack"
 category: site
-color: blue
 ---
 
 ### Beyond The Rack

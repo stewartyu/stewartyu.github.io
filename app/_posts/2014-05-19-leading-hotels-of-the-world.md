@@ -2,7 +2,6 @@
 layout: site
 title:  "Leading Hotels Of The World"
 category: site
-color: blue
 ---
 
 ### Leading Hotels Of The World

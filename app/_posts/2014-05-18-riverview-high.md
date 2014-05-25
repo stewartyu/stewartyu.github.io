@@ -2,7 +2,6 @@
 layout: site
 title:  "Riverview High"
 category: site
-color: purple
 ---
 
 ### Riverview High
