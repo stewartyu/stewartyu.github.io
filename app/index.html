@@ -46,6 +46,18 @@ slug: web
         </div>
     </div>
 
+    <div class="c-section c-work">
+        <h2>Work I've Done</h2>
+
+        <div class="c-work-cards">
+            {% for site in site.categories.site %}
+                <div class="c-card">
+                    {{ site.content }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+        
     <div class="c-section c-technologies">
         <h2>Technologies I Use</h2>
 
@@ -61,18 +73,6 @@ slug: web
             <li>Yeoman, Grunt, Bower</li>
             <li>Git/GitHub</li>
         </ul>
-    </div>
-
-    <div class="c-section c-work">
-        <h2>Work I've Done</h2>
-
-        <div class="c-work-cards">
-            {% for site in site.categories.site %}
-                <div class="c-card">
-                    {{ site.content }}
-                </div>
-            {% endfor %}
-        </div>
     </div>
 
     <div class="c-section c-contact">
