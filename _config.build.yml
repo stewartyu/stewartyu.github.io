@@ -5,6 +5,3 @@
 
 future: false
 show_drafts: false
-
-# Grunt handles images and assets.
-exclude: ['fonts']
