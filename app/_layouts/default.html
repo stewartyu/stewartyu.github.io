@@ -12,12 +12,12 @@
     <!-- build:css({app,.tmp}) /css/main.css -->
     <!--link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,400italic,100italic,100' rel='stylesheet' type='text/css'-->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ site.url }}/css/main.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
     <!-- endbuild -->
 
     <!-- build:js(app) /js/head-scripts.js -->
     <!-- Replace with a custom modernizer build for production -->
-    <script src="{{ site.url }}/_bower_components/modernizr/modernizr.js"></script>
+    <script src="{{ site.baseurl }}_bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
   </head>
@@ -30,10 +30,10 @@
         <a href="" class="t-header__title">Stewart Yu</a>
         <ul class="t-header__navigation">
             <li>
-                <a href="{{ site.url }}/" class="t-header__link {% if page.slug != 'music' %} t-header__link--selected {% endif %}">Web Development</a>
+                <a href="{{ site.baseurl }}" class="t-header__link {% if page.slug != 'music' %} t-header__link--selected {% endif %}">Web Development</a>
             </li>
             <li>
-                <a href="{{ site.url }}/music" class="t-header__link {% if page.slug == 'music' %} t-header__link--selected {% endif %}">Music</a>
+                <a href="{{ site.baseurl }}music" class="t-header__link {% if page.slug == 'music' %} t-header__link--selected {% endif %}">Music</a>
             </li>
         </ul>
     </header>
