@@ -28,6 +28,20 @@
             &::before {
                 top: 7px;
             }
+
+            &.fa-music::before {
+                left: -3px;
+            }
+
+            &.fa-users::before {
+                left: -9px;
+                top: 10px;
+            }
+
+            &.fa-play::before {
+                left: 10px;
+                top: 10px;
+            }
         }
     }
 
@@ -35,14 +49,6 @@
         top: -13px;
 
         font-size: 0.8em;
-    }
-
-    .fa-music::before {
-        left: -3px;
-    }
-
-    .fa-users:before {
-        left: -9px;
     }
 
     p {
