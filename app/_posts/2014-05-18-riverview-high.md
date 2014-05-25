@@ -11,7 +11,7 @@ category: site
     <li>responsive</li>
 </ul>
 
-<div class="c-media c-media--image">
+<div class="c-media c-media__image c--wide">
     <img src="{{ site.url }}/img/sites/riverviewhigh.jpg" />
 </div>
 

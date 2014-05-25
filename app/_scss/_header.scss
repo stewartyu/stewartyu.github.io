@@ -1,5 +1,6 @@
 .t-header {
     @include clearfix;
+
     border-top: 5px solid $brand;
 
     padding: $margin*3;

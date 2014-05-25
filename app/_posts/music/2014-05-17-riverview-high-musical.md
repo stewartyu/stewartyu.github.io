@@ -1,10 +1,10 @@
 ---
 layout: music
-title:  "Riverview High"
+title:  "Riverview High: The Musical"
 category: music
 ---
 
-### Riverview High
+### Riverview High: The Musical
 
 <ul class="c-card__stats">
     <li>music/lyrics</li>
