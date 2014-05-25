@@ -9,6 +9,8 @@
 }
 
 .c-card {
+    @include separator;
+
     padding: $margin $margin*2 $margin*2;
 
     float: left;
@@ -24,23 +26,6 @@
     .c-card {
         float: none;
         width: 100%;
-
-        &::after {
-            content: '';
-
-            display: block;
-            width: 10%;
-            height: $margin*3;
-
-            margin: 0 auto;
-            padding-bottom: $margin*3;
-
-            border-bottom: 1px dashed $brand;
-        }
-
-        &:last-of-type::after {
-            display: none;
-        }
     }
 }
 
