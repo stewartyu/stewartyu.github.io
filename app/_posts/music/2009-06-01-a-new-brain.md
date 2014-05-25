@@ -11,5 +11,5 @@ category: music
 </ul>
 
 <div class="c-media c-media__image">
-    <img src="{{ site.baseurl }}/img/music/a-new-brain.jpg" />
+    <img src="{{ site.baseurl }}img/music/a-new-brain.jpg" />
 </div>
