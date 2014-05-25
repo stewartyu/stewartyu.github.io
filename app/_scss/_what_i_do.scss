@@ -2,7 +2,7 @@
 }
 
 .c-philosophy {
-    margin: $margin*2;
+    padding: $margin*2;
     text-align: center;
 
     .fa {
@@ -15,18 +15,34 @@
         border-radius: 50%;
         padding: $margin*2;
 
-        &:before {
+        &::before {
             padding: $margin*2;
 
             position: relative;
             top: -7px;
         }
+
+        &.c--small {
+            font-size: 4.5rem;
+
+            &::before {
+                top: 7px;
+            }
+        }
     }
 
-    .fa-puzzle-piece:before {
+    .fa-puzzle-piece::before {
         top: -13px;
 
         font-size: 0.8em;
+    }
+
+    .fa-music::before {
+        left: -3px;
+    }
+
+    .fa-users:before {
+        left: -9px;
     }
 
     p {
@@ -39,7 +55,7 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .c-what-i-do {
         .col {
             float: none;

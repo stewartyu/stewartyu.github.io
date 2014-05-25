@@ -2,6 +2,10 @@
     margin-top: $margin*6;
 
     text-align: center;
+
+    p {
+        margin-bottom: $margin;
+    }
 }
 
 .c-hero__profile {
@@ -21,7 +25,7 @@
     .c-hero {
         margin-top: $margin;
     }
-    
+
     .c-hero__profile {
         max-width: 100px;
     }

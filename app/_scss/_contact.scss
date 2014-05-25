@@ -1,6 +1,10 @@
 .c-contact {
     text-align: center;
     margin: $margin*3;
+
+    p {
+        padding: 0 $margin*2;
+    }
 }
 
 .c-contact-email {
