@@ -131,6 +131,10 @@ img {
 
 a {
     color: $accent;
+
+    &:hover {
+        color: $brand;
+    }
 }
 
 body {

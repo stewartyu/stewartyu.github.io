@@ -22,6 +22,11 @@
     .fa {
         margin-right: $margin/2;
     }
+
+    &:hover {
+        background-color: $accent;
+        color: #fff;
+    }
 }
 
 .c-contact-social {
@@ -48,6 +53,10 @@
 
             font-size: 2.0rem;
             padding: $margin*1.5;
+        }
+
+        &:hover {
+            background-color: $brand;
         }
     }
 }

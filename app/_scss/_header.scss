@@ -25,14 +25,9 @@
 
 .t-header__link {
     padding: $margin;
-    margin-right: $margin*2;
 
     text-decoration: none;
     color: $black;
-
-    &:last-of-type {
-        margin-right: 0;
-    }
 }
 
 .t-header__link--selected {
