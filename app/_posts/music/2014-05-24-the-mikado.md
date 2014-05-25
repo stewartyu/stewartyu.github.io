@@ -11,5 +11,5 @@ category: music
 </ul>
 
 <div class="c-media c-media__image">
-    <img src="{{ site.url }}/img/music/mikado.jpg" />
+    <img src="{{ site.baseurl }}/img/music/mikado.jpg" />
 </div>

@@ -12,7 +12,7 @@ category: site
 </ul>
 
 <div class="c-media c-media__image c--wide">
-    <img src="{{ site.url }}/img/sites/riverviewhigh.jpg" />
+    <img src="{{ site.baseurl }}/img/sites/riverviewhigh.jpg" />
 </div>
 
 <div class="c-card__description">
