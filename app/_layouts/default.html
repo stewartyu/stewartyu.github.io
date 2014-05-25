@@ -30,10 +30,10 @@
         <a href="" class="t-header__title">Stewart Yu</a>
         <ul class="t-header__navigation">
             <li>
-                <a href="{{ site.url }}/" class="t-header__link {% if page.active != 'music' %} t-header__link--selected {% endif %}">Web Development</a>
+                <a href="{{ site.url }}/" class="t-header__link {% if page.slug != 'music' %} t-header__link--selected {% endif %}">Web Development</a>
             </li>
             <li>
-                <a href="{{ site.url }}/music" class="t-header__link {% if page.active == 'music' %} t-header__link--selected {% endif %}">Music</a>
+                <a href="{{ site.url }}/music" class="t-header__link {% if page.slug == 'music' %} t-header__link--selected {% endif %}">Music</a>
             </li>
         </ul>
     </header>
