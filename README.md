@@ -10,3 +10,7 @@
 Open up [http://localhost:9000](http://localhost:9000) in your browser.
 
 Voila!
+
+# DEPLOY
+
+    grunt deploy && git checkout master && git push
