@@ -300,7 +300,8 @@ module.exports = function (grunt) {
     jshint: {
       files: ['app/js/*.js'],
       options: {
-        //jshintrc: '.jshintrc',
+        /*jshintrc: '.jshintrc',*/
+        node:  true,
         reporter: require('jshint-stylish')
       },
       all: [
@@ -311,7 +312,7 @@ module.exports = function (grunt) {
     },
     csslint: {
       options: {
-        csslintrc: '.csslintrc'
+        /*csslintrc: '.csslintrc'*/
       },
       check: {
         src: [
@@ -364,8 +365,7 @@ module.exports = function (grunt) {
     'clean:server',
     'jekyll:check',
     'sass:server',
-    'jshint:all',
-    'csslint:check'
+    'jshint:all'
   ]);
 
   grunt.registerTask('build', [
