@@ -1,13 +1,13 @@
 ---
 layout: music
 title:  As Long As You Love Me Mashup
-category: vocals/arrangement
+category: music
 ---
 
 ### "As Long As You Love Me" Mashup
 
 <ul class="c-card__stats">
-    <li>music</li>
+    <li>vocals/arrangement</li>
 </ul>
 
 <div class="t-inner">
