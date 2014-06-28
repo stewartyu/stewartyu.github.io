@@ -1,7 +1,7 @@
 ---
 layout: music
 title:  As Long As You Love Me Mashup
-category: music
+category: vocals/arrangement
 ---
 
 ### "As Long As You Love Me" Mashup
