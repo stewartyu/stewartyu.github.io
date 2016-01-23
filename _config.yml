@@ -20,7 +20,7 @@ future: true
 show_drafts: true
 
 permalink: pretty
-paginate: nil
+paginate: 1
 paginate_path: 'page:num'
 
 # Markdown library
