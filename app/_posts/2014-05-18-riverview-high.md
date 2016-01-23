@@ -16,20 +16,14 @@ category: site
 </div>
 
 <div class="c-card__description">
-    <p>URL: <a href="http://www.riverviewhighthemusical.com">riverviewhighthemusical.com</a></p>
+    <p>Design and development of the marketing site for <em>Riverview High: The Musical</em>.</p>
 
-    <p>I designed and developed this marketing site for the 2012-2013 productions of <em>Riverview High: The Musical</em>. </p>
-
-    <p>Originally a WordPress site, I'm currently in the process of converting it to a static site generated with Jekyll, served on GitHub pages.</p>
-
-    <p>Technologies:</p>
-
-    <ul>
-        <li>WordPress</li>
-        <li>Jekyll</li>
-        <li>GitHub Pages</li>
-        <li>Yeoman</li>
-        <li>Grunt</li>
-        <li>Sass/Compass</li>
+    <ul class="c-card__technologies">
+        <li class="c-card__technology_item">Jekyll</li>
+        <li class="c-card__technology_item">Bootstrap</li>
+        <li class="c-card__technology_item">GitHub Pages</li>
+        <li class="c-card__technology_item">Yeoman</li>
+        <li class="c-card__technology_item">Grunt</li>
+        <li class="c-card__technology_item">Sass</li>
     </ul>
 </div>

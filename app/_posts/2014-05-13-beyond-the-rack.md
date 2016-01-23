@@ -18,11 +18,11 @@ category: site
 </div>
 
 <div class="c-card__description">
-    <p>URL: <a href="http://www.beyondtherack.com">beyondtherack.com</a></p>
+    <p>Lead front-end engineer for smartphone/tablet sites.</p>
 
-    <p>Results:</p>
-
-    <ul>
-        <li>Increased smartphone revenue by 90% in 2 months</li>
-        <li>Increased tablet revenue by 27% in 2 months</li>
+    <ul class="c-card__technologies">
+        <li class="c-card__technology_item">JavaScript</li>
+        <li class="c-card__technology_item">Zepto</li>
+        <li class="c-card__technology_item">Sass/Compass</li>
+    </ul>
 </div>

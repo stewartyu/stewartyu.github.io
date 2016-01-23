@@ -18,15 +18,12 @@ category: site
 </div>
 
 <div class="c-card__description">
-    <p>URL: <a href="http://www.lhw.com">lhw.com</a></p>
+    <p>Lead front-end engineer for smartphone site.</p>
 
-    <p>As the lead front-end engineer on this project, I helped shape the </p>
-
-    <p>Features:</p>
-
-    <ul>
-        <li>Significantly optimized booking flow on smartphone</li>
-        <li>Smartphone optimization across several localizations</li>
-        <li>Integration with jQuery UI modules</li>
+    <ul class="c-card__technologies">
+        <li class="c-card__technology_item">JavaScript</li>
+        <li class="c-card__technology_item">Zepto</li>
+        <li class="c-card__technology_item">jQuery UI</li>
+        <li class="c-card__technology_item">Sass/Compass</li>
     </ul>
 </div>

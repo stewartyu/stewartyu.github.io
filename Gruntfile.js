@@ -293,7 +293,8 @@ module.exports = function (grunt) {
           remote: 'git@github.com:stewartyu/stewartyu.github.io.git',
           branch: 'gh-pages',
           commit: true,
-          push: true
+          push: true,
+          connectCommits: false
         }
       }
     },
