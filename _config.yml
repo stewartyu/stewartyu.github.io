@@ -19,12 +19,8 @@ include: ['.htaccess']
 future: true
 show_drafts: true
 
-permalink: pretty
-paginate: 1
-paginate_path: 'page:num'
-
 # Markdown library
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-pygments: true
+highlighter: true
