@@ -19,11 +19,11 @@ category: site
     <p>Design and development of the marketing site for <em>Riverview High: The Musical</em>.</p>
 
     <ul class="c-card__technologies">
-        <li class="c-card__technology_item">Jekyll</li>
-        <li class="c-card__technology_item">Bootstrap</li>
-        <li class="c-card__technology_item">GitHub Pages</li>
-        <li class="c-card__technology_item">Yeoman</li>
-        <li class="c-card__technology_item">Grunt</li>
+        <li class="c-card__technology_item">Express</li>
+        <li class="c-card__technology_item">Node.js</li>
+        <li class="c-card__technology_item">Jade</li>
+        <li class="c-card__technology_item">Bower</li>
+        <li class="c-card__technology_item">Gulp</li>
         <li class="c-card__technology_item">Sass</li>
     </ul>
 </div>
