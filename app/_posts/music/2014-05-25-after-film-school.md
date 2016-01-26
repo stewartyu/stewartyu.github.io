@@ -1,10 +1,10 @@
 ---
 layout: music
-title:  "After Film School"
+title:  "Shooting The Musical"
 category: music
 ---
 
-### After Film School
+### Shooting The Musical
 
 <ul class="c-card__stats">
     <li>music/lyrics</li>
