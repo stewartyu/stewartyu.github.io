@@ -7,7 +7,7 @@ category: site
 ### Secret Friend
 
 <ul class="c-card__stats">
-    <li><a href="http://www.github.com/stewartyu/secretfriend">stewartyu/secretfriend</a></li>
+    <li><a href="http://www.github.com/stewartyu/secretfriend">(under development)</a></li>
     <li>responsive</li>
 </ul>
 

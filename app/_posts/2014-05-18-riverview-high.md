@@ -21,6 +21,7 @@ category: site
     <ul class="c-card__technologies">
         <li class="c-card__technology_item">Express</li>
         <li class="c-card__technology_item">Node.js</li>
+        <li class="c-card__technology_item">Heroku</li>
         <li class="c-card__technology_item">Jade</li>
         <li class="c-card__technology_item">Bower</li>
         <li class="c-card__technology_item">Gulp</li>
