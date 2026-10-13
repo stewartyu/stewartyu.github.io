@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ShowCard from '../../components/ShowCard.astro';
+
+const shows = (await getCollection('shows')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="Shows" description="Original musicals by composer and lyricist Stewart Yu.">
+  <section class="section">
+    <div class="container">
+      <h1>Shows</h1>
+      <p class="lede">Original musicals I've written, from early drafts to full productions.</p>
+      <div class="grid">
+        {shows.map((show) => <ShowCard show={show} />)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+</style>

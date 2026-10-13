@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import headshot from '../assets/headshot.jpg';
+---
+
+<Base title="About" description="About composer and lyricist Stewart Yu.">
+  <section class="section">
+    <div class="container about">
+      <Image src={headshot} alt="Stewart Yu" width={420} class="about__photo" />
+      <div class="prose">
+        <h1>About</h1>
+        <!-- TODO: replace with your real bio. -->
+        <p>
+          I'm a composer and lyricist who writes original musicals. I also music direct and conduct
+          musical theatre, write vocal arrangements, and perform as a singer and pianist.
+        </p>
+        <p>
+          My YouTube videos, a mix of musical theatre and pop, have been viewed more than 2 million times.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 48rem) {
+    .about {
+      grid-template-columns: 2fr 3fr;
+    }
+  }
+
+  .about__photo {
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 22rem;
+  }
+</style>

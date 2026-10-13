@@ -1,0 +1,21 @@
+---
+import { SITE } from '../consts';
+
+// Renders a mailto link without putting the address in the page source, so
+// scrapers looking for emails can't find it. The address is stored
+// base64-encoded and turned into a real mailto link once the page loads.
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const encoded = Buffer.from(SITE.email).toString('base64');
+---
+
+<a href="/contact/" class:list={['email-link', className]} data-e={encoded}><slot /></a>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('a.email-link').forEach((link) => {
+    link.href = `mailto:${atob(link.dataset.e ?? '')}`;
+  });
+</script>

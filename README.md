@@ -1,18 +1,18 @@
-# INSTALL GUIDE
+# stewartyu.com
 
-    sudo gem install jekyll-import maruku safe_yaml
-    sudo gem install jekyll -v 1.4.3
+Personal site for my work as a composer and lyricist, built with [Astro](https://astro.build) and deployed to GitHub Pages.
+
+## Develop
+
     npm install
-    bundle install
+    npm run dev
 
-# GET STARTED
+Open http://localhost:4321.
 
-    grunt serve
+## Add a show
 
-Open up [http://localhost:9000](http://localhost:9000) in your browser.
+Add a Markdown file to `src/content/shows/`. Copy an existing one for the fields; the body is the synopsis.
 
-Voila!
+## Deploy
 
-# DEPLOY
-
-    grunt deploy && git checkout master && git push
+Push to `development`. The GitHub Actions workflow builds the site and publishes it.

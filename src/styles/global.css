@@ -1,0 +1,120 @@
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --text: #1d1a17;
+  --muted: #6b635b;
+  --accent: #9c2f2f;
+  --border: #e6dfd5;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --width: 68rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.lede {
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 40rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.prose {
+  max-width: 42rem;
+}
+
+.embed {
+  position: relative;
+  width: 100%;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.embed--video {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.embed--audio {
+  height: 166px;
+}

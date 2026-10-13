@@ -1,0 +1,184 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const shows = await getCollection('shows');
+  return shows.map((show) => ({ params: { slug: show.id }, props: { show } }));
+}
+
+const { show } = Astro.props;
+const { title, logline, credit, status, image, songs, history, team, quotes } = show.data;
+const { Content } = await render(show);
+
+const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
+---
+
+<Base title={title} description={logline}>
+  <article>
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">{credit}</p>
+        <h1>{title}</h1>
+        <p class="lede">{logline}</p>
+        <p class="status">{status}</p>
+        {image && <img class="poster" src={image} alt="" />}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <h2>Synopsis</h2>
+        <Content />
+      </div>
+    </section>
+
+    {
+      songs.length > 0 && (
+        <section class="section">
+          <div class="container">
+            <h2>Listen</h2>
+            <div class="songs">
+              {songs.map((song) => (
+                <div class="song">
+                  <h3>{song.title}</h3>
+                  {song.description && <p>{song.description}</p>}
+                  {song.embed && (
+                    <iframe
+                      class:list={['embed', isVideo(song.embed) ? 'embed--video' : 'embed--audio']}
+                      src={song.embed}
+                      title={song.title}
+                      loading="lazy"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      allowfullscreen
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      quotes.length > 0 && (
+        <section class="section">
+          <div class="container">
+            {quotes.map((q) => (
+              <blockquote>
+                <p>“{q.text}”</p>
+                <cite>{q.source}</cite>
+              </blockquote>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      (history.length > 0 || team.length > 0) && (
+        <section class="section">
+          <div class="container details">
+            {history.length > 0 && (
+              <div>
+                <h2>Development history</h2>
+                <dl>
+                  {history.map((h) => (
+                    <>
+                      <dt>{h.year}</dt>
+                      <dd>{h.event}</dd>
+                    </>
+                  ))}
+                </dl>
+              </div>
+            )}
+            {team.length > 0 && (
+              <div>
+                <h2>Creative team</h2>
+                <dl>
+                  {team.map((t) => (
+                    <>
+                      <dt>{t.role}</dt>
+                      <dd>{t.name}</dd>
+                    </>
+                  ))}
+                </dl>
+              </div>
+            )}
+          </div>
+        </section>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  .status {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .poster {
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 48rem;
+  }
+
+  .songs {
+    display: grid;
+    gap: 2rem;
+    max-width: 48rem;
+  }
+
+  .song p {
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+  }
+
+  blockquote {
+    margin: 0 0 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+    font-family: var(--serif);
+    font-size: 1.35rem;
+  }
+
+  blockquote p {
+    margin: 0 0 0.25rem;
+  }
+
+  cite {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-style: normal;
+    color: var(--muted);
+  }
+
+  .details {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 48rem) {
+    .details {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+  }
+</style>
