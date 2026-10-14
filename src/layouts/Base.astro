@@ -55,8 +55,8 @@ const path = Astro.url.pathname;
       <div class="container site-footer__inner">
         <p>© {new Date().getFullYear()} {SITE.name}</p>
         <p>
-          <EmailLink>Email</EmailLink>
           {SOCIALS.map((s) => <a href={s.href}>{s.label}</a>)}
+          <EmailLink>Email</EmailLink>
         </p>
       </div>
     </footer>
