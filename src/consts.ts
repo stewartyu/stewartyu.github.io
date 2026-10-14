@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'Stewart Yu',
-  tagline: 'Composer & lyricist for new musicals',
+  tagline: 'Composer & lyricist',
   email: 'stewart@stewartyu.com',
 };
 
