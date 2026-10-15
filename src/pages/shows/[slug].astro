@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 }
 
 const { show } = Astro.props;
-const { title, logline, credit, status, image, songs, history, team, quotes } = show.data;
+const { title, logline, credit, status, image, website, songs, history, team, quotes } = show.data;
 const { Content } = await render(show);
 
 const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
@@ -27,9 +27,11 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
     </section>
 
     <section class="section">
-      <div class="container prose">
-        <h2>Synopsis</h2>
-        <Content />
+      <div class="container">
+        <div class="prose">
+          <h2>Synopsis</h2>
+          <Content />
+        </div>
       </div>
     </section>
 
@@ -110,6 +112,16 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
         </section>
       )
     }
+
+    {
+      website && (
+        <section class="section">
+          <div class="container">
+            <p class="website"><a class="button" href={website}>Visit the show's website</a></p>
+          </div>
+        </section>
+      )
+    }
   </article>
 </Base>
 
@@ -117,6 +129,11 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
   .status {
     color: var(--accent);
     font-weight: 500;
+  }
+
+  .website {
+    margin: 0;
+    text-align: center;
   }
 
   .poster {

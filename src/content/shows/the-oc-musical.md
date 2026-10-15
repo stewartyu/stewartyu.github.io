@@ -6,6 +6,7 @@ status: "Pick of the Fringe · Vancouver Fringe 2015"
 order: 1
 featured: true
 image: "/img/shows/the-oc-cast.jpg"
+website: "https://www.theocmusical.com/"
 songs:
   - title: "Watch the full show"
     description: "The complete musical on YouTube"
