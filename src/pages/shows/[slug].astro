@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 }
 
 const { show } = Astro.props;
-const { title, logline, credit, status, image, songs, history, team, quotes } = show.data;
+const { title, logline, credit, status, image, website, songs, history, team, quotes } = show.data;
 const { Content } = await render(show);
 
 const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
@@ -106,6 +106,16 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
                 </dl>
               </div>
             )}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      website && (
+        <section class="section">
+          <div class="container">
+            <p><a class="button" href={website}>Visit the show's website</a></p>
           </div>
         </section>
       )

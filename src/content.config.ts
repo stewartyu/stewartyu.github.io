@@ -19,6 +19,8 @@ const shows = defineCollection({
     featured: z.boolean().default(false),
     // Path to an image in public/, e.g. "/img/shows/my-show.jpg".
     image: z.string().optional(),
+    // The show's own website, e.g. "https://www.my-show.com/".
+    website: z.string().url().optional(),
     songs: z
       .array(
         z.object({
