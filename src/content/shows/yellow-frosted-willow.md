@@ -5,6 +5,7 @@ credit: "Music & Lyrics"
 status: "In concert Nov. 23, 2026 · Don't Tell Mama, NYC"
 order: 0
 featured: true
+image: "/img/shows/yellow-frosted-willow.jpg"
 songs:
   - title: "Anything I Dream"
     embed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2417982585&auto_play=false&hide_related=true&show_comments=false&show_reposts=false&visual=false"
