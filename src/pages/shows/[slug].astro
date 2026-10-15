@@ -115,7 +115,7 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
       website && (
         <section class="section">
           <div class="container">
-            <p><a class="button" href={website}>Visit the show's website</a></p>
+            <p class="website"><a class="button" href={website}>Visit the show's website</a></p>
           </div>
         </section>
       )
@@ -127,6 +127,11 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
   .status {
     color: var(--accent);
     font-weight: 500;
+  }
+
+  .website {
+    margin: 0;
+    text-align: center;
   }
 
   .poster {
