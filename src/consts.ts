@@ -1,7 +1,9 @@
 export const SITE = {
   name: 'Stewart Yu',
   tagline: 'Composer & lyricist',
-  email: 'stewart@stewartyu.com',
+  // Base64-encoded so the address never appears in plain text in the repo or
+  // the built pages. See EmailLink.astro.
+  emailEncoded: 'c3Rld2FydEBzdGV3YXJ0eXUuY29t',
 };
 
 export const SOCIALS = [
