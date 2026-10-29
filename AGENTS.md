@@ -45,4 +45,15 @@ The checks, read-only (report results, never change anything):
    to the scratchpad exactly as written and run with `python3 -I`. It checks all three of
    Stewart's sites; report this site's results and mention anything broken on the others.
    Facebook/X and 401/403/429 responses are "couldn't verify", not broken.
-3. **The change itself:** confirm what the merged PR changed is visible on the live site.
+3. **The change itself works as intended.** From the merged PR's description and diff, list
+   what should now be true on the live site, then check each one and report pass/fail per item:
+   - **Added or changed things** are present on every page they should be on, and they work:
+     links reach a live page or video, images load, embeds play.
+   - **Removed things** are gone from every page, not just one.
+   - **Layout or styling changes** look right: take screenshots with the pre-installed headless
+     browser (Playwright/Chromium) at desktop and phone widths and look at them (e.g. footer
+     icons still evenly spaced after removing one).
+   - **Interactive changes** (menus, forms, players) behave correctly when exercised in the
+     headless browser.
+   - If the PR doesn't change the live site (notes or docs only), say so and confirm the new
+     files weren't published by mistake.
