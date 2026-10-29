@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { class: className } = Astro.props;
-const encoded = btoa(SITE.email);
+const encoded = SITE.emailEncoded;
 ---
 
 <a href="/contact/" class:list={['email-link', className]} data-e={encoded}><slot /></a>
