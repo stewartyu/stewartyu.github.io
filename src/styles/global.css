@@ -1,13 +1,16 @@
 :root {
-  --bg: #faf7f2;
-  --surface: #ffffff;
-  --text: #1d1a17;
-  --muted: #6b635b;
-  --accent: #9c2f2f;
-  --border: #e6dfd5;
-  --serif: 'Fraunces', Georgia, serif;
-  --sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --width: 68rem;
+  --bg: #121114;
+  --surface: #1d1b20;
+  --text: #f2efe9;
+  --soft: #cfcac2;
+  --muted: #a8a29a;
+  --accent: #f3d98b;
+  --on-accent: #121114;
+  --border: #3a3740;
+  --sans: 'Archivo', system-ui, -apple-system, sans-serif;
+  --mono: 'DM Mono', ui-monospace, monospace;
+  --width: 75rem;
+  color-scheme: dark;
 }
 
 * {
@@ -24,32 +27,41 @@ body {
   color: var(--text);
   font-family: var(--sans);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--serif);
-  font-weight: 600;
-  line-height: 1.15;
+  font-weight: 900;
+  line-height: 0.95;
   margin: 0 0 0.5em;
 }
 
 h1 {
-  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-stretch: 125%;
+  font-size: clamp(2.75rem, 7vw, 5rem);
   letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-stretch: 125%;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  text-transform: uppercase;
 }
 
 h3 {
   font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 a {
+  color: var(--text);
+}
+
+a:hover {
   color: var(--accent);
 }
 
@@ -62,51 +74,78 @@ img {
 .container {
   max-width: var(--width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .section {
-  padding: 3.5rem 0;
+  padding: 2.5rem 0 4.5rem;
 }
 
 .eyebrow {
+  font-family: var(--mono);
   font-size: 0.8rem;
-  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 0.5rem;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
 }
 
 .lede {
-  font-size: 1.25rem;
-  color: var(--muted);
-  max-width: 40rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--soft);
+  max-width: 34rem;
+}
+
+.mono-link {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 0;
 }
 
 .button {
   display: inline-block;
-  padding: 0.7rem 1.3rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 999px;
   background: var(--accent);
-  color: var(--bg);
-  font-weight: 600;
+  color: var(--on-accent);
+  font-weight: 700;
   text-decoration: none;
 }
 
 .button:hover {
+  color: var(--on-accent);
   opacity: 0.9;
+}
+
+.button--outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+
+.button--outline:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .prose {
   max-width: 42rem;
+  color: var(--soft);
+}
+
+.prose h1,
+.prose h2 {
+  color: var(--text);
 }
 
 .embed {
   position: relative;
   width: 100%;
   border: 0;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background: var(--surface);
 }
 

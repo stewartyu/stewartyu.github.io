@@ -3,31 +3,70 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import ShowCard from '../components/ShowCard.astro';
+import SongPlayer from '../components/SongPlayer.astro';
 import headshot from '../assets/headshot.jpg';
+import { SOCIALS } from '../consts';
 
 const featured = (await getCollection('shows', ({ data }) => data.featured)).sort(
   (a, b) => a.data.order - b.data.order,
 );
+
+// The first featured show gets the big block at the top of the page.
+const spotlight = featured[0];
+const spotlightBook = spotlight?.data.team.find((t) => t.role === 'Book');
+const spotlightSong = spotlight?.data.songs.find((s) => s.embed?.includes('soundcloud.com'));
+const youtube = SOCIALS.find((s) => s.label === 'YouTube');
 ---
 
 <Base>
   <section class="section">
     <div class="container hero">
-      <div>
-        <p class="eyebrow">Composer · Lyricist</p>
-        <h1>Hi, I'm Stewart!</h1>
-        <p class="lede">I’m a New York-based composer and lyricist. Currently developing <a href="/shows/yellow-frosted-willow/">a new musical</a> about the life and career of Anna May Wong.</p>
-        <p><a class="button" href="/shows/">See the shows</a></p>
+      <div class="hero__text">
+        <h1 class="hero__title">Songs<br />for the<br /><span>stage.</span></h1>
+        <p class="lede">
+          Hi, I'm Stewart! Award-winning composer and lyricist based in New York. Currently developing <a
+            href="/shows/yellow-frosted-willow/">a new musical</a
+          > about Anna May Wong.
+        </p>
       </div>
       <Image src={headshot} alt="Stewart Yu" class="hero__photo" width={480} loading="eager" />
     </div>
   </section>
 
   {
-    featured.length > 0 && (
-      <section class="section">
+    spotlight && (
+      <section class="section section--tight">
         <div class="container">
-          <h2>Featured shows</h2>
+          <div class="spotlight">
+            {spotlight.data.image && <img class="spotlight__image" src={spotlight.data.image} alt="" />}
+            <div class="spotlight__body">
+              <p class="eyebrow">New musical</p>
+              <h2 class="spotlight__title">
+                <a href={`/shows/${spotlight.id}/`}>{spotlight.data.title}</a>
+              </h2>
+              <p class="spotlight__text">
+                {spotlight.data.logline.replace(/\.$/, '')}.{spotlightBook && ` Book by ${spotlightBook.name}.`}
+              </p>
+              {spotlightSong?.embed && <SongPlayer title={spotlightSong.title} embed={spotlightSong.embed} />}
+              <p class="spotlight__status">
+                {spotlight.data.status} →{' '}
+                <a href={spotlight.data.website ?? `/shows/${spotlight.id}/`}>Details</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    featured.length > 0 && (
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <h2>Shows</h2>
+            <a class="mono-link" href="/shows/">All shows →</a>
+          </div>
           <div class="grid">
             {featured.map((show) => (
               <ShowCard show={show} />
@@ -37,31 +76,199 @@ const featured = (await getCollection('shows', ({ data }) => data.featured)).sor
       </section>
     )
   }
+
+  <section class="section section--tight">
+    <div class="container panels">
+      {
+        youtube && (
+          <div class="panel panel--accent">
+            <p class="panel__stat">2M+</p>
+            <p class="panel__text">views on my YouTube videos — a mix of musical theatre and pop.</p>
+            <a class="mono-link" href={youtube.href}>Watch on YouTube →</a>
+          </div>
+        )
+      }
+      <div class="panel">
+        <p class="panel__text panel__text--soft">Also available for music direction, conducting and vocal arrangements.</p>
+        <a class="button button--outline" href="/contact/">Get in touch</a>
+      </div>
+    </div>
+  </section>
 </Base>
 
 <style>
+  .section--tight {
+    padding-top: 0;
+  }
+
   .hero {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: stretch;
+  }
+
+  .hero__text {
+    flex: 999 1 32rem;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 2rem;
-    align-items: center;
   }
 
-  @media (min-width: 48rem) {
-    .hero {
-      grid-template-columns: 3fr 2fr;
-    }
+  .hero__title {
+    margin: 0;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.86;
   }
 
-  .hero__photo {
-    border-radius: 0.75rem;
-    max-width: 22rem;
+  .hero__title span {
+    color: var(--accent);
+  }
+
+  .hero .lede {
+    margin: 0;
+  }
+
+  .hero .lede a {
+    color: inherit;
+  }
+
+  .hero .lede a:hover {
+    color: var(--accent);
+  }
+
+  .hero :global(.hero__photo) {
+    flex: 1 1 18rem;
+    max-width: 25rem;
     width: 100%;
+    min-height: 26rem;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .spotlight {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--surface);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .spotlight__image {
+    flex: 1 1 20rem;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .spotlight__body {
+    flex: 999 1 27rem;
+    min-width: 0;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .spotlight__body .eyebrow {
+    margin: 0;
+  }
+
+  .spotlight__body :global(.player) {
+    background: var(--bg);
+  }
+
+  .spotlight__title {
+    margin: 0;
+    font-stretch: 112%;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    text-transform: none;
+  }
+
+  .spotlight__title a {
+    text-decoration: none;
+  }
+
+  .spotlight__text {
+    margin: 0;
+    font-size: 1.125rem;
+    color: var(--soft);
+  }
+
+  .spotlight__status {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    color: var(--soft);
+  }
+
+  .section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .section-head h2 {
+    margin: 0;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
     gap: 1.5rem;
+  }
+
+  .panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 1.5rem;
+  }
+
+  .panel {
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .panel--accent {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .panel--accent a {
+    color: var(--on-accent);
+  }
+
+  .panel p {
+    margin: 0;
+  }
+
+  .panel__stat {
+    font-weight: 900;
+    font-stretch: 125%;
+    font-size: 4.5rem;
+    line-height: 0.9;
+  }
+
+  .panel__text {
+    font-size: 1.125rem;
+    line-height: 1.45;
+    font-weight: 600;
+  }
+
+  .panel__text--soft {
+    font-weight: 400;
+    color: var(--soft);
   }
 </style>

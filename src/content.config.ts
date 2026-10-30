@@ -13,6 +13,10 @@ const shows = defineCollection({
     credit: z.string(),
     // Where the show is right now, e.g. "In development · Seeking producers".
     status: z.string(),
+    // Short line under the title on show cards, e.g. "2015 · Vancouver Fringe".
+    meta: z.string().optional(),
+    // Awards shown as badges on the show's card and page.
+    awards: z.array(z.string()).default([]),
     // Lower numbers appear first on the Shows page.
     order: z.number().default(100),
     // Featured shows appear on the home page.

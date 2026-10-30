@@ -3,6 +3,9 @@ title: "The O.C.: The Musical"
 logline: "An over-the-top, unauthorized musical parody of the hit teen drama The O.C."
 credit: "Music & Lyrics"
 status: "Pick of the Fringe · Vancouver Fringe 2015"
+meta: "2015 · Vancouver Fringe"
+awards:
+  - "Pick of the Fringe"
 order: 1
 featured: true
 image: "/img/shows/the-oc-cast.jpg"

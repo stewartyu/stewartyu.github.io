@@ -28,7 +28,7 @@ const path = Astro.url.pathname;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=DM+Mono:wght@400;500&display=swap"
     />
   </head>
   <body>
@@ -64,49 +64,42 @@ const path = Astro.url.pathname;
 </html>
 
 <style>
-  .site-header {
-    border-bottom: 1px solid var(--border);
-  }
-
   .site-header__inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem 1.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   .site-header__name {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--text);
+    font-weight: 900;
+    font-stretch: 125%;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     text-decoration: none;
   }
 
   nav {
     display: flex;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0 1.75rem;
   }
 
   nav a {
-    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     text-decoration: none;
-    font-weight: 500;
+    padding: 0.75rem 0;
   }
 
-  nav a:hover,
   nav a[aria-current='page'] {
-    color: var(--text);
-  }
-
-  .site-footer {
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--accent);
   }
 
   .site-footer__inner {
@@ -116,12 +109,25 @@ const path = Astro.url.pathname;
     gap: 0 2rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    /* A rule across the content width only, not the side padding. */
+    background: linear-gradient(var(--border), var(--border)) top / calc(100% - 3rem) 1px no-repeat;
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
   }
 
   .site-footer p {
     margin: 0.25rem 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+
+  .site-footer :global(a) {
+    color: var(--muted);
+  }
+
+  .site-footer :global(a:hover) {
+    color: var(--accent);
   }
 </style>

@@ -3,6 +3,10 @@ title: "Riverview High: The Musical"
 logline: "A '90s teen-sitcom musical about graduation day, first love, and big decisions."
 credit: "Music & Lyrics"
 status: "Ovation Award winner · Pick of the Fringe"
+meta: "2012 · Vancouver Fringe"
+awards:
+  - "Ovation Award"
+  - "Pick of the Fringe"
 order: 3
 featured: true
 image: "/img/shows/riverview-high-cast.jpg"

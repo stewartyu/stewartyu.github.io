@@ -1,21 +1,23 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import AwardBadges from './AwardBadges.astro';
 
 interface Props {
   show: CollectionEntry<'shows'>;
 }
 
 const { show } = Astro.props;
-const { title, logline, credit, status, image } = show.data;
+const { title, meta, status, image, awards } = show.data;
 ---
 
 <a class="card" href={`/shows/${show.id}/`}>
-  {image ? <img src={image} alt="" loading="lazy" /> : <div class="card__placeholder">{title}</div>}
-  <div class="card__body">
-    <p class="eyebrow">{credit}</p>
-    <h3>{title}</h3>
-    <p class="card__logline">{logline}</p>
-    <p class="card__status">{status}</p>
+  <div class="card__media">
+    {image ? <img src={image} alt="" loading="lazy" /> : <div class="card__placeholder">{title}</div>}
+    <AwardBadges awards={awards} class="card__badges" />
+  </div>
+  <div>
+    <h3 class="card__title">{title}</h3>
+    <p class="card__meta">{meta ?? status}</p>
   </div>
 </a>
 
@@ -23,24 +25,25 @@ const { title, logline, credit, status, image } = show.data;
   .card {
     display: flex;
     flex-direction: column;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    color: inherit;
+    gap: 0.75rem;
     text-decoration: none;
-    transition: transform 0.15s ease;
   }
 
-  .card:hover {
-    transform: translateY(-2px);
+  .card__media {
+    position: relative;
   }
 
   .card img,
   .card__placeholder {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 1 / 1;
     width: 100%;
     object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.15s ease;
+  }
+
+  .card:hover img {
+    transform: translateY(-2px);
   }
 
   .card__placeholder {
@@ -48,23 +51,28 @@ const { title, logline, credit, status, image } = show.data;
     place-items: center;
     padding: 1rem;
     text-align: center;
-    font-family: var(--serif);
+    font-weight: 900;
     font-size: 1.5rem;
     color: var(--muted);
-    background: var(--border);
+    background: var(--surface);
   }
 
-  .card__body {
-    padding: 1.25rem;
+  .card__media :global(.card__badges) {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
   }
 
-  .card__logline {
-    margin: 0 0 0.75rem;
-  }
-
-  .card__status {
+  .card__title {
     margin: 0;
-    font-size: 0.875rem;
-    color: var(--accent);
+    font-size: 1.1875rem;
+  }
+
+  .card__meta {
+    margin: 0.25rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
   }
 </style>

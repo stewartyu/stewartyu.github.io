@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import AwardBadges from '../../components/AwardBadges.astro';
+import SongPlayer from '../../components/SongPlayer.astro';
 
 export async function getStaticPaths() {
   const shows = await getCollection('shows');
@@ -8,20 +10,24 @@ export async function getStaticPaths() {
 }
 
 const { show } = Astro.props;
-const { title, logline, credit, status, image, website, songs, history, team, quotes } = show.data;
+const { title, logline, credit, status, image, website, songs, history, team, quotes, awards } = show.data;
 const { Content } = await render(show);
 
 const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
+const isSoundCloud = (url: string) => url.includes('soundcloud.com');
 ---
 
 <Base title={title} description={logline}>
   <article>
     <section class="section">
-      <div class="container">
-        <p class="eyebrow">{credit}</p>
-        <h1>{title}</h1>
-        <p class="lede">{logline}</p>
-        <p class="status">{status}</p>
+      <div class="container show-head">
+        <div class="show-head__text">
+          <p class="eyebrow">{credit}</p>
+          <h1>{title}</h1>
+          <p class="lede">{logline}</p>
+          <AwardBadges awards={awards} />
+          <p class="status">{status}</p>
+        </div>
         {image && <img class="poster" src={image} alt="" />}
       </div>
     </section>
@@ -43,17 +49,23 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
             <div class="songs">
               {songs.map((song) => (
                 <div class="song">
-                  <h3>{song.title}</h3>
-                  {song.description && <p>{song.description}</p>}
-                  {song.embed && (
-                    <iframe
-                      class:list={['embed', isVideo(song.embed) ? 'embed--video' : 'embed--audio']}
-                      src={song.embed}
-                      title={song.title}
-                      loading="lazy"
-                      allow="autoplay; encrypted-media; picture-in-picture"
-                      allowfullscreen
-                    />
+                  {song.embed && isSoundCloud(song.embed) ? (
+                    <SongPlayer title={song.title} subtitle={song.description} embed={song.embed} />
+                  ) : (
+                    <>
+                      <h3>{song.title}</h3>
+                      {song.description && <p>{song.description}</p>}
+                      {song.embed && (
+                        <iframe
+                          class:list={['embed', isVideo(song.embed) ? 'embed--video' : 'embed--audio']}
+                          src={song.embed}
+                          title={song.title}
+                          loading="lazy"
+                          allow="autoplay; encrypted-media; picture-in-picture"
+                          allowfullscreen
+                        />
+                      )}
+                    </>
                   )}
                 </div>
               ))}
@@ -67,12 +79,14 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
       quotes.length > 0 && (
         <section class="section">
           <div class="container">
-            {quotes.map((q) => (
-              <blockquote>
-                <p>“{q.text}”</p>
-                <cite>{q.source}</cite>
-              </blockquote>
-            ))}
+            <div class="quotes">
+              {quotes.map((q) => (
+                <blockquote>
+                  <p>“{q.text}”</p>
+                  <cite>{q.source}</cite>
+                </blockquote>
+              ))}
+            </div>
           </div>
         </section>
       )
@@ -126,9 +140,27 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
 </Base>
 
 <style>
+  .show-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .show-head__text {
+    flex: 1 1 26rem;
+    min-width: 0;
+  }
+
+  .show-head h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+
   .status {
-    color: var(--accent);
-    font-weight: 500;
+    margin: 1.25rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    color: var(--soft);
   }
 
   .website {
@@ -137,16 +169,20 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
   }
 
   .poster {
-    margin-top: 2rem;
-    border-radius: 0.75rem;
+    flex: 1 1 26rem;
+    min-width: 0;
     width: 100%;
-    max-width: 48rem;
+    border-radius: 1rem;
   }
 
   .songs {
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 48rem;
+  }
+
+  .song h3 {
+    margin-bottom: 0.25rem;
   }
 
   .song p {
@@ -154,28 +190,36 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
     margin: 0 0 0.75rem;
   }
 
+  .quotes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 2.5rem;
+  }
+
   blockquote {
-    margin: 0 0 1.5rem;
-    padding-left: 1.25rem;
-    border-left: 3px solid var(--accent);
-    font-family: var(--serif);
-    font-size: 1.35rem;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
   }
 
   blockquote p {
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.75rem;
   }
 
   cite {
-    font-family: var(--sans);
-    font-size: 0.9rem;
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    font-weight: 400;
     font-style: normal;
-    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
   }
 
   .details {
     display: grid;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   @media (min-width: 48rem) {
@@ -184,18 +228,26 @@ const isVideo = (url: string) => /youtube\.com|youtu\.be|vimeo\.com/.test(url);
     }
   }
 
+  .details h2 {
+    font-size: 1.5rem;
+  }
+
   dl {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 0.5rem 1.5rem;
+    gap: 0.75rem 1.5rem;
     margin: 0;
   }
 
   dt {
-    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    color: var(--muted);
+    padding-top: 0.15rem;
   }
 
   dd {
     margin: 0;
+    color: var(--soft);
   }
 </style>
