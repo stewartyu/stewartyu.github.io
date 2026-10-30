@@ -35,8 +35,9 @@ task run against the live site. Certificate checks are not needed on merges.
 The checks, read-only (report results, never change anything):
 
 1. **Pages:** https://www.stewartyu.com loads over HTTPS with the title
-   "Stewart Yu | Composer & lyricist", the "Hi, I'm Stewart!" heading, the Shows/About/Contact
-   nav, and a "Featured shows" section listing four shows. These pages each load with real
+   "Stewart Yu | Composer & lyricist", the "Songs for the stage." heading with the
+   "Hi, I'm Stewart!" intro under it, the Shows/About/Contact nav, and a "Shows" section listing
+   four shows. These pages each load with real
    content: `/shows/`, `/about/`, `/contact/`, `/shows/yellow-frosted-willow/`,
    `/shows/the-oc-musical/`, `/shows/shooting-the-musical/`, `/shows/riverview-high-the-musical/`
    (if the PR added or removed a show, check the current list instead).

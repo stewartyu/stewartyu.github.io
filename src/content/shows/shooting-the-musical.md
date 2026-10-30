@@ -3,6 +3,9 @@ title: "Shooting The Musical"
 logline: "A dark comedy mockumentary about film school grads"
 credit: "Music & Lyrics"
 status: "Feature film · Canadian Film Fest 2015 winner"
+meta: "2015 · Feature film"
+awards:
+  - "Canadian Film Fest winner"
 order: 2
 featured: true
 image: "/img/shows/shooting-the-musical.jpg"
