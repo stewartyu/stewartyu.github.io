@@ -21,6 +21,14 @@ Consult these guides before working on related tasks:
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
 
+## Dependabot auto-merge
+
+Dependabot minor/patch PRs merge themselves once CI's `check` job passes (the `automerge` job in
+`.github/workflows/ci.yml`), then start the deploy. Majors wait for Stewart. Every deploy ends with
+a `smoke` job that checks the live site and opens an issue if it fails. A failed-smoke issue
+means the latest deploy broke the site: find the cause, and if it was a Dependabot update, propose
+reverting its merge commit.
+
 ## After a PR merges: run the content smoke checks
 
 Every merge to `development` deploys the live site (`.github/workflows/deploy.yml`, GitHub Pages).
